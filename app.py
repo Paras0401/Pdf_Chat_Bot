@@ -16,6 +16,7 @@ load_dotenv()
 
 # Access secrets using st.secrets
 api_key = st.secrets["GOOGLE_API_KEY"]
+genai.configure(api_key=api_key)
 
 st.write(f"API Key: {GOOGLE_API_KEY}")
     
