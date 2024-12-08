@@ -18,7 +18,7 @@ load_dotenv()
 api_key = st.secrets["GOOGLE_API_KEY"]
 genai.configure(api_key=api_key)
 
-st.write(f"API Key: {GOOGLE_API_KEY}")
+st.write(f"API Key: {api_key}")
     
 def get_pdf_text(pdf_docs):
     text = ""
