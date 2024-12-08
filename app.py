@@ -10,7 +10,7 @@ from langchain.chains.question_answering import load_qa_chain
 from langchain.prompts import PromptTemplate
 from dotenv import load_dotenv
 
-st.set_page_config(page_title="PDF Chat Bot")
+
 load_dotenv()
 # os.getenv("GOOGLE_API_KEY")
 # genai.configure(api_key=os.getenv("Google_API_Key"))
@@ -86,7 +86,7 @@ def user_input(user_question):
 
 
 def main():
-    st.set_page_config("PDF Chat Bot")
+    st.set_page_config(page_title="PDF Chat Bot")
     st.header("Ask Anything from Pdf")
 
     user_question = st.text_input("Ask a Question from the PDF Files")
