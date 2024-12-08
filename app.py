@@ -25,24 +25,24 @@ def login():
     user_id_input = st.text_input("User ID")
     user_password_input = st.text_input("Password", type="password")
 
-    # Retrieve credentials from secrets
-    correct_user_id = st.secrets["credentials"]["USER_ID"]
-    correct_password = st.secrets["credentials"]["USER_PASSWORD"]
+    # Only check credentials if both fields are filled
+    if user_id_input and user_password_input:
+        correct_user_id = st.secrets["credentials"]["USER_ID"]
+        correct_password = st.secrets["credentials"]["USER_PASSWORD"]
 
-    if user_id_input == correct_user_id and user_password_input == correct_password:
-        return True
-    else:
-        return False
+        if user_id_input == correct_user_id and user_password_input == correct_password:
+            return True
+        else:
+            st.error("Invalid credentials. Please try again.")
+            return False
+    return False
 
 # Display login form if not authenticated
 if not login():
-    st.error("Invalid credentials. Please try again.")
+    st.stop()  # Stop further execution until credentials are provided
 else:
     # Once authenticated, proceed with the app logic
-    
-    # Access the API key and continue the app execution
-    # st.write(f"API Key: {api_key}")
-    
+
     def get_pdf_text(pdf_docs):
         text = ""
         for pdf in pdf_docs:
