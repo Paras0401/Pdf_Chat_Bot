@@ -41,7 +41,7 @@ else:
     # Once authenticated, proceed with the app logic
     
     # Access the API key and continue the app execution
-    st.write(f"API Key: {api_key}")
+    # st.write(f"API Key: {api_key}")
     
     def get_pdf_text(pdf_docs):
         text = ""
