@@ -10,6 +10,7 @@ from langchain.chains.question_answering import load_qa_chain
 from langchain.prompts import PromptTemplate
 from dotenv import load_dotenv
 
+st.set_page_config(page_title="PDF Chat Bot")
 load_dotenv()
 # os.getenv("GOOGLE_API_KEY")
 # genai.configure(api_key=os.getenv("Google_API_Key"))
